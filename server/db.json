@@ -1,0 +1,50 @@
+{
+  "formData": [
+    {
+      "id": 1770192097038,
+      "name": "田遇安",
+      "email": "tiqanyuan@qq.com",
+      "phone": "13455645554",
+      "message": "你好啊！",
+      "time": "2026/2/4 16:01:37"
+    },
+    {
+      "id": 1770192136416,
+      "name": "哈哈哈！",
+      "email": "hahaha@qq.com",
+      "phone": "13855446645",
+      "message": "你好啊！",
+      "time": "2026/2/4 16:02:16"
+    },
+    {
+      "id": 1770192218053,
+      "name": "徐二",
+      "email": "xuer@qq.com",
+      "phone": "13677844554",
+      "message": "你好！",
+      "time": "2026/2/4 16:03:38"
+    },
+    {
+      "id": 1770201776471,
+      "name": "林小曼",
+      "email": "linxiaoman@qq.com",
+      "phone": "130805335454",
+      "message": "你好啊！",
+      "time": "2026/2/4 18:42:56"
+    }
+  ],
+  "productList": [
+    {
+      "id": 1,
+      "name": "人工智能解决方案",
+      "desc": "为企业提供AI智能分析服务",
+      "imgUrl": "/images/product1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "企业数字化转型",
+      "desc": "助力传统企业实现数字化升级",
+      "imgUrl": "/images/product2.jpg"
+    }
+  ]
+}
