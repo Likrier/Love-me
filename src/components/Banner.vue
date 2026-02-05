@@ -36,21 +36,23 @@ const bannerContainer = ref(null)
 const bannerSlider = ref(null)
 const currentSlide = ref(0)
 const slideInterval = ref(null)
-
+import banner from '../assets/banner.png'
+import banner1 from '../assets/banner1.png'
+import banner2 from '../assets/banner2.png'
 // 轮播数据
 const slides = [
   {
-    image: 'src/assets/banner.png',
+    image: banner,
     title: '专业服务，创造价值',
     description: '我们致力于为客户提供高质量的服务，帮助企业实现数字化转型'
   },
   {
-    image: 'src/assets/banner1.png',
+    image: banner1,
     title: '创新科技，引领未来',
     description: '依托先进技术，为企业提供创新解决方案，助力业务增长'
   },
   {
-    image: 'src/assets/banner2.png',
+    image: banner2,
     title: '客户至上，合作共赢',
     description: '以客户需求为中心，建立长期稳定的合作关系，实现共同发展'
   }
