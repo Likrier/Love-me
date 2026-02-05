@@ -7,14 +7,16 @@ const path = require('path')
 
 // 创建后端服务
 const app = express()
-const port = 3001
+// 修复1：动态获取端口（Vercel自动分配 + 本地兼容3001）
+const port = process.env.PORT || 3001
 
 // 中间件配置（跨域+解析数据）
 app.use(cors()) // 解决前端跨域问题
 app.use(bodyParser.json()) // 解析json格式数据
 app.use(bodyParser.urlencoded({ extended: true })) // 解析表单格式数据
 
-
+// 新增：拦截favicon.ico请求，避免无意义的404警报（顺手解决）
+app.get('/favicon.ico', (req, res) => res.status(204).end());
 
 // 托管前端dist文件夹
 app.use(express.static(path.join(__dirname, '../dist')));
@@ -23,6 +25,7 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
+
 // 定义数据库文件路径
 const dbPath = path.join(__dirname, 'db.json')
 
@@ -63,6 +66,7 @@ app.get('/api/form', (req, res) => {
 })
 
 // 启动后端服务
-app.listen(port, () => {
-    console.log(`后端服务运行在：http://127.0.0.1:${port}`)
+// 修复2：添加0.0.0.0监听地址，适配Vercel云容器环境
+app.listen(port, '0.0.0.0', () => {
+    console.log(`后端服务运行在：http://0.0.0.0:${port}`)
 })
