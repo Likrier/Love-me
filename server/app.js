@@ -14,6 +14,15 @@ app.use(cors()) // 解决前端跨域问题
 app.use(bodyParser.json()) // 解析json格式数据
 app.use(bodyParser.urlencoded({ extended: true })) // 解析表单格式数据
 
+
+
+// 托管前端dist文件夹
+app.use(express.static(path.join(__dirname, '../dist')));
+
+// 处理Vue的history模式路由，所有未匹配的请求都返回index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 // 定义数据库文件路径
 const dbPath = path.join(__dirname, 'db.json')
 
